@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GoTogether — находите людей рядом, создавайте приглашения и проводите время вместе.">
+  <title>GoTogether — Вместе интереснее</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="logo" aria-label="GoTogether — на главную">
+        <span class="logo__icon" aria-hidden="true">
+          <svg viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="14" cy="8" r="5" fill="#00e676"/>
+            <path d="M14 14c-5 0-9 3-9 7v2h18v-2c0-4-4-7-9-7z" fill="#00e676"/>
+            <circle cx="30" cy="8" r="5" fill="#00e676"/>
+            <path d="M30 14c-5 0-9 3-9 7v2h18v-2c0-4-4-7-9-7z" fill="#00e676"/>
+          </svg>
+        </span>
+        <span class="logo__text">
+          <span class="logo__name">GoTogether</span>
+          <span class="logo__slogan">Вместе интереснее</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="main-nav">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <nav class="nav" id="main-nav" aria-label="Основная навигация">
+        <a href="#app-phone" class="nav__link nav__link--active" data-screen="map">Карта людей</a>
+        <a href="#app-phone" class="nav__link" data-screen="profile">Профиль</a>
+        <a href="#app-phone" class="nav__link" data-screen="invite">Создание приглашения</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero + Phones + Why -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <h1 class="hero__title" id="hero-title">
+            Не с кем пойти сегодня вечером?
+            <span class="hero__brand">GoTogether!</span>
+          </h1>
+          <p class="hero__subtitle">
+            Находите людей рядом, создавайте приглашения и проводите время вместе.
+          </p>
+
+          <ul class="benefits-list">
+            <li class="benefits-list__item">
+              <span class="benefits-list__icon benefits-list__icon--green" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M5 21v-1a7 7 0 0 1 14 0v1"/></svg>
+              </span>
+              <span>Люди рядом</span>
+            </li>
+            <li class="benefits-list__item">
+              <span class="benefits-list__icon benefits-list__icon--purple" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </span>
+              <span>Приглашения, а не переписка</span>
+            </li>
+            <li class="benefits-list__item">
+              <span class="benefits-list__icon benefits-list__icon--gold" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="3"/><circle cx="15" cy="7" r="3"/><path d="M3 21v-1a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v1"/><path d="M14 21v-1a4 4 0 0 1 4-4h1"/></svg>
+              </span>
+              <span>Собирайте компанию</span>
+            </li>
+            <li class="benefits-list__item">
+              <span class="benefits-list__icon benefits-list__icon--blue" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </span>
+              <span>Безопасность и доверие</span>
+            </li>
+            <li class="benefits-list__item">
+              <span class="benefits-list__icon benefits-list__icon--pink" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </span>
+              <span>Для любых целей</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="phones" aria-label="Превью экранов приложения">
+          <div class="phones__row phones__row--top">
+            <div class="phone phone--sm phone--ghost" data-label="Карта людей">
+              <div class="phone__notch" aria-hidden="true"></div>
+              <div class="phone__screen">
+                <span class="phone__placeholder">Карта людей</span>
+              </div>
+            </div>
+
+            <div class="phone phone--lg phone--featured phone-morning" id="app-phone" data-label="VRON GO TOGETHER">
+              <div class="phone__notch" aria-hidden="true"></div>
+              <div class="phone__screen phone__screen--app">
+                <div class="app-screens">
+
+                  <!-- Home: VRON GO TOGETHER -->
+                  <div class="app-screen app-screen--home vgt-screen is-active" data-screen="map" role="tabpanel" aria-label="VRON GO TOGETHER Home">
+
+                    <div class="vgt-views">
+                      <!-- Home view -->
+                      <div class="vgt-view vgt-view--home is-active" id="vgt-view-home" data-vgt-view="map">
+
+                    <header class="vgt-status">
+                      <span class="vgt-status__time">13:02</span>
+                      <button class="vgt-theme-pill theme-toggle-btn" id="theme-toggle-btn" type="button" aria-label="Текущий режим: Morning • Berlin">
+                        <span class="theme-toggle-btn__icon" aria-hidden="true">🌅</span>
+                        <span class="theme-toggle-btn__label">Morning • Berlin</span>
+                      </button>
+                      <span class="vgt-status__icons" aria-hidden="true">
+                        <svg viewBox="0 0 16 10" fill="currentColor"><rect x="0" y="6" width="3" height="4" rx="0.5"/><rect x="4.5" y="4" width="3" height="6" rx="0.5"/><rect x="9" y="2" width="3" height="8" rx="0.5"/></svg>
+                        <svg viewBox="0 0 16 10" fill="currentColor"><rect x="0" y="8" width="12" height="2" rx="1"/><rect x="13" y="6" width="3" height="4" rx="1" transform="rotate(90 14.5 8)"/></svg>
+                      </span>
+                    </header>
+
+                    <div class="vgt-profile">
+                      <div class="vgt-profile__top">
+                        <span class="vgt-profile__logo">GO</span>
+                        <div class="vgt-profile__user">
+                          <span class="vgt-profile__avatar">AK</span>
+                          <span class="vgt-profile__name">Anna</span>
+                        </div>
+                      </div>
+                      <p class="vgt-profile__brand">.. VRON • GO TOGETHER</p>
+                    </div>
+
+                    <h2 class="vgt-headline">14 people near you are out in the city.</h2>
+
+                    <p class="vgt-motto" id="vgt-motto">☕ The city feels like the first coffee.</p>
+
+                    <div class="vgt-hero" aria-hidden="true">
+                      <h3 class="vgt-hero__go">GO</h3>
+                    </div>
+
+                    <article class="vgt-warm">
+                      <div class="vgt-warm__head">
+                        <button class="vgt-warm__filter" type="button" aria-label="Filter">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg>
+                        </button>
+                        <span class="vgt-warm__label">WARM CIRCLE</span>
+                      </div>
+                      <div class="vgt-warm__body">
+                        <div class="vgt-warm__icon" aria-hidden="true">☕</div>
+                        <div class="vgt-warm__info">
+                          <div class="vgt-warm__title-row">
+                            <strong class="vgt-warm__title">Slow coffee</strong>
+                            <span class="vgt-warm__tag" id="vgt-warm-tag">[WARM]</span>
+                          </div>
+                          <p class="vgt-warm__meta">Sofie • Neukölln • 6 min walk • ends 20:42</p>
+                          <div class="vgt-warm__people">
+                            <span class="vgt-warm__avatars">
+                              <span>E</span><span>S</span><span>+</span>
+                            </span>
+                            <span class="vgt-warm__meet">Emil, +2 • 1 you've met</span>
+                          </div>
+                        </div>
+                        <span class="vgt-warm__chevron" aria-hidden="true">›</span>
+                      </div>
+                    </article>
+
+                    <section class="vgt-suggests">
+                      <div class="vgt-suggests__head">
+                        <span class="vgt-suggests__title" id="vgt-suggests-title">SUNNY • THE CITY SUGGESTS</span>
+                        <span class="vgt-suggests__note">recommendations only — never ads</span>
+                      </div>
+                      <div class="vgt-suggests__row" id="vgt-activities">
+                        <button class="vgt-activity" type="button">
+                          <span class="vgt-activity__icon">🚶</span>
+                          <span class="vgt-activity__label">Morning walk</span>
+                        </button>
+                        <button class="vgt-activity" type="button">
+                          <span class="vgt-activity__icon">🎲</span>
+                          <span class="vgt-activity__label">Board games</span>
+                        </button>
+                        <button class="vgt-activity" type="button">
+                          <span class="vgt-activity__icon">☕</span>
+                          <span class="vgt-activity__label">Coffee outside</span>
+                        </button>
+                        <button class="vgt-activity vgt-activity--add" type="button" aria-label="Create event">
+                          <span>+</span>
+                        </button>
+                      </div>
+                    </section>
+
+                      </div><!-- /vgt-view--home -->
+
+                      <!-- Alerts view -->
+                      <div class="vgt-view vgt-view--alerts" id="vgt-view-alerts" data-vgt-view="alerts" aria-hidden="true">
+
+                        <header class="vgt-alerts-head">
+                          <div class="vgt-alerts-head__brand">
+                            <span class="vgt-alerts-head__logo">GO</span>
+                            <p class="vgt-alerts-head__sub">.. ALERTS</p>
+                          </div>
+                          <button class="vgt-alerts-head__filter" type="button" aria-label="Filter settings">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>
+                          </button>
+                        </header>
+
+                        <ul class="vgt-alerts-list">
+                          <li class="vgt-alert">
+                            <div class="vgt-alert__icon" aria-hidden="true">☕</div>
+                            <div class="vgt-alert__body">
+                              <p class="vgt-alert__title">Someone wants slow coffee nearby. Neukölln • 5 min walk</p>
+                              <p class="vgt-alert__reason">Because you're open to Slow Coffee in the evening.</p>
+                              <time class="vgt-alert__time">2 min ago</time>
+                            </div>
+                            <span class="vgt-alert__unread" aria-label="Unread"></span>
+                          </li>
+                          <li class="vgt-alert">
+                            <div class="vgt-alert__icon" aria-hidden="true">🎲</div>
+                            <div class="vgt-alert__body">
+                              <p class="vgt-alert__title">A board game is missing one more player. Kreuzberg • 8 min walk</p>
+                              <p class="vgt-alert__reason">Because you follow Board Games.</p>
+                              <time class="vgt-alert__time">15 min ago</time>
+                            </div>
+                            <span class="vgt-alert__unread" aria-label="Unread"></span>
+                          </li>
+                          <li class="vgt-alert">
+                            <div class="vgt-alert__icon vgt-alert__icon--chat" aria-hidden="true">
+                              <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/></svg>
+                            </div>
+                            <div class="vgt-alert__body">
+                              <p class="vgt-alert__title">German conversation walk starts in 20 min. Prenzlauer Berg • 10 min walk</p>
+                              <p class="vgt-alert__reason">Because you practice Deutsch (A2-B1).</p>
+                              <time class="vgt-alert__time">20 min ago</time>
+                            </div>
+                            <span class="vgt-alert__unread" aria-label="Unread"></span>
+                          </li>
+                          <li class="vgt-alert">
+                            <div class="vgt-alert__icon" aria-hidden="true">♡</div>
+                            <div class="vgt-alert__body">
+                              <p class="vgt-alert__title">Someone from your Warm Circle opened a pulse. Friedrichshain • 12 min walk</p>
+                              <p class="vgt-alert__reason">Because you're in their circle.</p>
+                              <time class="vgt-alert__time">1 hour ago</time>
+                            </div>
+                          </li>
+                        </ul>
+
+                      </div><!-- /vgt-view--alerts -->
+
+                      <!-- Send a Pulse view -->
+                      <div class="vgt-view vgt-view--pulse" id="vgt-view-pulse" data-vgt-view="pulse" aria-hidden="true">
+
+                        <header class="vgt-pulse-head">
+                          <span class="vgt-pulse-head__logo">GO</span>
+                          <p class="vgt-pulse-head__sub">&lt; SEND A PULSE</p>
+                        </header>
+
+                        <div class="vgt-pulse-body">
+                          <h2 class="vgt-pulse-title">What brings you into the city today?</h2>
+                          <p class="vgt-pulse-lead">You'll glow on the map for 3h. Anyone within 2 km can join.</p>
+
+                          <div class="vgt-pulse-grid" id="vgt-pulse-grid" role="group" aria-label="Activity categories">
+                            <button class="vgt-pulse-cat" type="button" data-pulse-cat="coffee">
+                              <span class="vgt-pulse-cat__icon" aria-hidden="true">☕</span>
+                              <span class="vgt-pulse-cat__label">Coffee</span>
+                            </button>
+                            <button class="vgt-pulse-cat" type="button" data-pulse-cat="walk">
+                              <span class="vgt-pulse-cat__icon" aria-hidden="true">🚶</span>
+                              <span class="vgt-pulse-cat__label">Walk</span>
+                            </button>
+                            <button class="vgt-pulse-cat" type="button" data-pulse-cat="board-games">
+                              <span class="vgt-pulse-cat__icon" aria-hidden="true">🎲</span>
+                              <span class="vgt-pulse-cat__label">Board Games</span>
+                            </button>
+                            <button class="vgt-pulse-cat" type="button" data-pulse-cat="dinner">
+                              <span class="vgt-pulse-cat__icon" aria-hidden="true">🍽</span>
+                              <span class="vgt-pulse-cat__label">Dinner</span>
+                            </button>
+                            <button class="vgt-pulse-cat" type="button" data-pulse-cat="drinks">
+                              <span class="vgt-pulse-cat__icon" aria-hidden="true">🍸</span>
+                              <span class="vgt-pulse-cat__label">Drinks</span>
+                            </button>
+                            <button class="vgt-pulse-cat" type="button" data-pulse-cat="speaking">
+                              <span class="vgt-pulse-cat__icon" aria-hidden="true">💬</span>
+                              <span class="vgt-pulse-cat__label">Speaking Club</span>
+                            </button>
+                            <button class="vgt-pulse-cat" type="button" data-pulse-cat="cinema">
+                              <span class="vgt-pulse-cat__icon" aria-hidden="true">🎬</span>
+                              <span class="vgt-pulse-cat__label">Cinema</span>
+                            </button>
+                            <button class="vgt-pulse-cat" type="button" data-pulse-cat="sport">
+                              <span class="vgt-pulse-cat__icon" aria-hidden="true">🏃</span>
+                              <span class="vgt-pulse-cat__label">Sport</span>
+                            </button>
+                            <button class="vgt-pulse-cat" type="button" data-pulse-cat="study">
+                              <span class="vgt-pulse-cat__icon" aria-hidden="true">📚</span>
+                              <span class="vgt-pulse-cat__label">Study</span>
+                            </button>
+                            <button class="vgt-pulse-cat" type="button" data-pulse-cat="music">
+                              <span class="vgt-pulse-cat__icon" aria-hidden="true">🎵</span>
+                              <span class="vgt-pulse-cat__label">Music</span>
+                            </button>
+                            <button class="vgt-pulse-cat" type="button" data-pulse-cat="art">
+                              <span class="vgt-pulse-cat__icon" aria-hidden="true">🎨</span>
+                              <span class="vgt-pulse-cat__label">Art</span>
+                            </button>
+                            <button class="vgt-pulse-cat" type="button" data-pulse-cat="other">
+                              <span class="vgt-pulse-cat__icon vgt-pulse-cat__icon--dots" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>
+                              </span>
+                              <span class="vgt-pulse-cat__label">Other</span>
+                            </button>
+                          </div>
+
+                          <div class="vgt-pulse-visibility" id="vgt-pulse-visibility" role="group" aria-label="Visibility">
+                            <button class="vgt-pulse-seg vgt-pulse-seg--active" type="button" data-pulse-vis="warm">Warm circle</button>
+                            <button class="vgt-pulse-seg" type="button" data-pulse-vis="city">Open to city</button>
+                          </div>
+
+                          <section class="vgt-pulse-expires">
+                            <h3 class="vgt-pulse-expires__title">EXPIRES IN</h3>
+                            <div class="vgt-pulse-expires__opts" id="vgt-pulse-expires" role="group" aria-label="Duration">
+                              <button class="vgt-pulse-pill vgt-pulse-pill--active" type="button" data-pulse-exp="3">3 hours</button>
+                              <button class="vgt-pulse-pill" type="button" data-pulse-exp="6">6 hours</button>
+                              <button class="vgt-pulse-pill" type="button" data-pulse-exp="decide">I decide</button>
+                            </div>
+                            <p class="vgt-pulse-expires__note">You can end it anytime.</p>
+                          </section>
+                        </div>
+
+                      </div><!-- /vgt-view--pulse -->
+                    </div><!-- /vgt-views -->
+
+                    <nav class="vgt-tabbar" id="vgt-tabbar" aria-label="App navigation">
+                      <button class="vgt-tabbar__btn vgt-tabbar__btn--active" type="button" data-vgt-tab="map" aria-label="Map" aria-current="page">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Map</span>
+                      </button>
+                      <button class="vgt-tabbar__btn" type="button" data-vgt-tab="pulse" aria-label="New Pulse">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+                        <span>New Pulse</span>
+                      </button>
+                      <button class="vgt-tabbar__btn" type="button" data-vgt-tab="alerts" aria-label="Alerts">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                        <span class="vgt-tabbar__badge">3</span>
+                        <span>Alerts</span>
+                      </button>
+                      <button class="vgt-tabbar__btn" type="button" data-vgt-tab="you" aria-label="You">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="7" r="4"/><path d="M5 21v-1a7 7 0 0 1 14 0v1"/></svg>
+                        <span>You</span>
+                      </button>
+                      <button class="vgt-tabbar__btn" type="button" data-vgt-tab="settings" aria-label="Settings">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                        <span>Settings</span>
+                      </button>
+                    </nav>
+                  </div>
+
+                  <!-- Screen: Profile (stub) -->
+                  <div class="app-screen app-screen--profile" data-screen="profile" role="tabpanel" aria-label="Профиль">
+                    <div class="app-status" aria-hidden="true"><span>9:41</span></div>
+                    <div class="app-profile">
+                      <button class="app-profile__back" type="button" aria-label="Назад">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                      </button>
+                      <div class="app-profile__hero">
+                        <span class="app-profile__photo app-avatar app-avatar--green app-avatar--hero">А</span>
+                      </div>
+                      <div class="app-profile__content">
+                        <div class="app-profile__head">
+                          <h3>Андрей, 31</h3>
+                          <span class="app-user-card__rating">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                            4.8
+                          </span>
+                        </div>
+                        <p class="app-profile__distance">1.4 км от вас</p>
+                        <div class="app-profile__section">
+                          <h4>Интересы</h4>
+                          <div class="app-tags">
+                            <span class="app-tag">Кино</span>
+                            <span class="app-tag">Путешествия</span>
+                            <span class="app-tag">Музыка</span>
+                            <span class="app-tag">Футбол</span>
+                          </div>
+                        </div>
+                        <div class="app-profile__section">
+                          <h4>О себе</h4>
+                          <p class="app-profile__bio">Люблю кино, прогулки и новые знакомства. Ищу компанию для активного досуга.</p>
+                        </div>
+                      </div>
+                      <button class="app-btn app-btn--primary app-profile__cta" type="button">Пригласить</button>
+                    </div>
+                  </div>
+
+                  <!-- Screen: Create Invitation (stub) -->
+                  <div class="app-screen app-screen--invite" data-screen="invite" role="tabpanel" aria-label="Создание приглашения">
+                    <div class="app-status" aria-hidden="true"><span>9:41</span></div>
+                    <header class="app-invite-header">
+                      <button class="app-icon-btn" type="button" aria-label="Закрыть">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                      </button>
+                      <h3>Куда идём?</h3>
+                      <span class="app-invite-header__spacer"></span>
+                    </header>
+                    <div class="app-invite">
+                      <div class="app-activities">
+                        <button class="app-activity app-activity--active" type="button">🎬 Кино</button>
+                        <button class="app-activity" type="button">🍽 Поесть</button>
+                        <button class="app-activity" type="button">🎳 Боулинг</button>
+                        <button class="app-activity" type="button">🚶 Прогулка</button>
+                        <button class="app-activity" type="button">🌳 Парк</button>
+                        <button class="app-activity" type="button">⚽ Спорт</button>
+                      </div>
+                      <div class="app-field">
+                        <label>Когда?</label>
+                        <div class="app-field__value">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                          Сегодня, 20:10
+                        </div>
+                      </div>
+                      <div class="app-field">
+                        <label>Место</label>
+                        <div class="app-field__value">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                          Kino Cinestar
+                        </div>
+                      </div>
+                      <div class="app-field">
+                        <label>Количество мест</label>
+                        <div class="app-stepper">
+                          <button type="button" aria-label="Уменьшить">−</button>
+                          <span>2</span>
+                          <button type="button" aria-label="Увеличить">+</button>
+                        </div>
+                        <p class="app-field__hint">Есть 2 свободных места</p>
+                      </div>
+                      <button class="app-btn app-btn--primary app-invite__cta" type="button">Создать приглашение</button>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="phone phone--sm phone--ghost" data-label="Создание приглашения">
+              <div class="phone__notch" aria-hidden="true"></div>
+              <div class="phone__screen">
+                <span class="phone__placeholder">Создание приглашения</span>
+              </div>
+            </div>
+          </div>
+          <div class="phones__row phones__row--bottom">
+            <div class="phone phone--sm" data-label="Приглашение">
+              <div class="phone__notch" aria-hidden="true"></div>
+              <div class="phone__screen">
+                <span class="phone__placeholder">Приглашение</span>
+              </div>
+            </div>
+            <div class="phone phone--sm" data-label="Чат">
+              <div class="phone__notch" aria-hidden="true"></div>
+              <div class="phone__screen">
+                <span class="phone__placeholder">Чат</span>
+              </div>
+            </div>
+            <div class="phone phone--sm" data-label="Настройки">
+              <div class="phone__notch" aria-hidden="true"></div>
+              <div class="phone__screen">
+                <span class="phone__placeholder">Настройки</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="why" aria-labelledby="why-title">
+          <h2 class="why__title" id="why-title">Почему GoTogether?</h2>
+          <ul class="why__list">
+            <li class="why-card">
+              <span class="why-card__icon why-card__icon--yellow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </span>
+              <div class="why-card__text">
+                <strong>Прямо сейчас</strong>
+                <span>Находите компанию для встречи сегодня</span>
+              </div>
+            </li>
+            <li class="why-card">
+              <span class="why-card__icon why-card__icon--purple" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-1.54"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-1.54"/></svg>
+              </span>
+              <div class="why-card__text">
+                <strong>Умные рекомендации</strong>
+                <span>Подбор людей по интересам и целям</span>
+              </div>
+            </li>
+            <li class="why-card">
+              <span class="why-card__icon why-card__icon--green" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </span>
+              <div class="why-card__text">
+                <strong>Безопасность</strong>
+                <span>Верификация и контроль профилей</span>
+              </div>
+            </li>
+            <li class="why-card">
+              <span class="why-card__icon why-card__icon--blue" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              </span>
+              <div class="why-card__text">
+                <strong>Уведомления</strong>
+                <span>Мгновенные оповещения о приглашениях</span>
+              </div>
+            </li>
+            <li class="why-card">
+              <span class="why-card__icon why-card__icon--cyan" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </span>
+              <div class="why-card__text">
+                <strong>Доступно везде</strong>
+                <span>iOS и Android — всегда под рукой</span>
+              </div>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="steps" aria-labelledby="steps-title">
+      <div class="container">
+        <h2 class="steps__title" id="steps-title">Как это работает?</h2>
+        <ol class="steps__flow">
+          <li class="step">
+            <div class="step__circle step__circle--green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M5 21v-1a7 7 0 0 1 14 0v1"/></svg>
+            </div>
+            <span class="step__label">Создайте профиль</span>
+          </li>
+          <li class="step__arrow" aria-hidden="true">
+            <svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32M28 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </li>
+          <li class="step">
+            <div class="step__circle step__circle--white">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <span class="step__label">Смотрите людей</span>
+          </li>
+          <li class="step__arrow" aria-hidden="true">
+            <svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32M28 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </li>
+          <li class="step">
+            <div class="step__circle step__circle--orange">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9a3 3 0 0 1 3-3h14a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V9z"/><path d="M8 9h8M8 13h5"/></svg>
+            </div>
+            <span class="step__label">Создавайте или откликайтесь</span>
+          </li>
+          <li class="step__arrow" aria-hidden="true">
+            <svg viewBox="0 0 40 12" fill="none"><path d="M0 6h32M28 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </li>
+          <li class="step">
+            <div class="step__circle step__circle--purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <span class="step__label">Встречайтесь</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Footer area: Premium + Download -->
+    <section class="bottom" aria-label="Premium и скачивание">
+      <div class="container bottom__grid">
+        <div class="premium">
+          <h2 class="premium__title">
+            <span class="premium__crown" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 19h20v2H2v-2zM4 16l2-9 4 4 2-7 2 7 4-4 2 9H4z"/></svg>
+            </span>
+            GoTogether Premium
+          </h2>
+          <ul class="premium__list">
+            <li class="premium__item">
+              <span class="premium__check" aria-hidden="true">✓</span>
+              Безлимитные приглашения
+            </li>
+            <li class="premium__item">
+              <span class="premium__check" aria-hidden="true">✓</span>
+              Просмотр, кто смотрел профиль
+            </li>
+            <li class="premium__item">
+              <span class="premium__check" aria-hidden="true">✓</span>
+              Расширенные фильтры поиска
+            </li>
+            <li class="premium__item">
+              <span class="premium__check" aria-hidden="true">✓</span>
+              Режим инкогнито
+            </li>
+            <li class="premium__item">
+              <span class="premium__check" aria-hidden="true">✓</span>
+              Приоритет в рекомендациях
+            </li>
+            <li class="premium__item">
+              <span class="premium__check" aria-hidden="true">✓</span>
+              Без рекламы
+            </li>
+          </ul>
+          <button class="premium__btn" type="button">€7.99 / мес.</button>
+        </div>
+
+        <div class="download">
+          <h2 class="download__title">Скачайте GoTogether</h2>
+          <div class="download__qr" aria-label="QR-код для скачивания">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <rect width="120" height="120" fill="#fff" rx="8"/>
+              <rect x="10" y="10" width="30" height="30" fill="#0a0e17"/>
+              <rect x="80" y="10" width="30" height="30" fill="#0a0e17"/>
+              <rect x="10" y="80" width="30" height="30" fill="#0a0e17"/>
+              <rect x="15" y="15" width="20" height="20" fill="#fff"/>
+              <rect x="85" y="15" width="20" height="20" fill="#fff"/>
+              <rect x="15" y="85" width="20" height="20" fill="#fff"/>
+              <rect x="20" y="20" width="10" height="10" fill="#0a0e17"/>
+              <rect x="90" y="20" width="10" height="10" fill="#0a0e17"/>
+              <rect x="20" y="90" width="10" height="10" fill="#0a0e17"/>
+              <rect x="50" y="10" width="8" height="8" fill="#0a0e17"/>
+              <rect x="62" y="10" width="8" height="8" fill="#0a0e17"/>
+              <rect x="50" y="22" width="8" height="8" fill="#0a0e17"/>
+              <rect x="50" y="50" width="20" height="20" fill="#0a0e17"/>
+              <rect x="80" y="50" width="8" height="8" fill="#0a0e17"/>
+              <rect x="50" y="80" width="8" height="8" fill="#0a0e17"/>
+              <rect x="62" y="80" width="8" height="8" fill="#0a0e17"/>
+              <rect x="80" y="80" width="8" height="8" fill="#0a0e17"/>
+              <rect x="92" y="80" width="8" height="8" fill="#0a0e17"/>
+              <rect x="80" y="92" width="8" height="8" fill="#0a0e17"/>
+              <rect x="92" y="92" width="8" height="8" fill="#0a0e17"/>
+            </svg>
+          </div>
+          <div class="download__stores">
+            <a href="#" class="store-btn store-btn--apple" aria-label="Скачать в App Store">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              <span>
+                <small>Download on the</small>
+                App Store
+              </span>
+            </a>
+            <a href="#" class="store-btn store-btn--google" aria-label="Скачать в Google Play">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5.28 0 .53.08.76.21l13.04 7.52c.66.38.66 1.32 0 1.7L5.26 20.29c-.23.13-.48.21-.76.21-.83 0-1.5-.67-1.5-1.5z"/></svg>
+              <span>
+                <small>Get it on</small>
+                Google Play
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="site-footer__copy">GoTogether — когда вместе лучше.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
