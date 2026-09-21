@@ -1122,6 +1122,13 @@ button {
   gap: 5px;
 }
 
+/* Author styles such as `.vgt-auth__field { display: flex; }` otherwise
+   override the browser's native `[hidden]` rule. Keep inactive auth controls
+   genuinely hidden when switching between sign-in, registration and recovery. */
+.vgt-auth__form [hidden] {
+  display: none !important;
+}
+
 .vgt-auth__tabs {
   display: grid;
   grid-template-columns: 1fr 1fr;
